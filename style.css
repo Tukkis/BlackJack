@@ -1,3 +1,83 @@
 * {
     box-sizing: border-box;
 }
+
+#grid-container {
+    height: 80vh;
+    margin: 0 10% 0 10%;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr;
+    grid-template-areas: 
+        ". cpu1 ."
+        "cpu2 center cpu3"
+        ". playerhand ."
+    ;
+}
+
+#cpu1{
+    background-color: blue;
+    display: grid;
+    grid-auto-flow: column;
+}
+
+#cpu2{
+    background-color: green;
+    display: grid;
+    grid-auto-flow: column;
+}
+
+#cpu3{
+    background-color: orange;
+    display: grid;
+    grid-auto-flow: row;
+}
+
+#playerhand{
+    background-color: red;
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.hand{
+    justify-content: center;
+    align-content: center;
+    gap: 4px;
+}
+
+#deck{
+    margin: 25% 0 0 10%;
+}
+
+.card {
+    display: inline-block;
+    position: absolute;
+    width: 5em;
+    height: 7em;
+    background-color: #ffffff;
+    box-shadow: 0 0.0625em 0.125em rgba(0, 0, 0, 0.15);
+    border-radius: 0.25em;
+}
+
+.red{
+    color: red;
+}
+
+.black{
+    color: black;
+}
+
+img {
+    width: 5em;
+    height: 7em;
+    box-shadow: 0 0.0625em 0.125em rgba(0, 0, 0, 0.15);
+    position: absolute;
+}
+
+.drawn>img{
+    display: none;
+}
+
+.drawn>.cardfront{
+    display: absolute;
+}
